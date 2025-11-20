@@ -18,8 +18,6 @@ docker-compose down
 
 1️⃣ Получение погоды
 
-POST /api/v1/weather
-
 Запрос текущей погоды для города
 
 Пример: Celsius
@@ -35,8 +33,6 @@ curl -X POST "http://127.0.0.1:8000/api/v1/weather" \
      -d '{"city_name": "New York", "unit": "fahrenheit"}'
      
 2️⃣ История запросов
-
-GET /api/v1/history
 
 Получение истории запросов с фильтрацией по городу и дате.
 
@@ -58,8 +54,6 @@ curl -X GET "http://127.0.0.1:8000/api/v1/history?city=Moscow&date_from=2025-11-
 
 3️⃣ Экспорт истории
 
-GET /api/v1/export
-
 Экспорт истории запросов в CSV.
 
 Пример:
@@ -67,28 +61,8 @@ GET /api/v1/export
 curl -X GET "http://127.0.0.1:8000/api/v1/export?city=Moscow&date_from=2025-11-13&date_to=2025-11-20" \
      -o weather_history.csv
      
+
 4️⃣ Health Check
-
-GET /api/v1/health
-
-Проверка работоспособности сервиса.
-
-curl -X GET "http://127.0.0.1:8000/api/v1/health"
-
-3️⃣ Экспорт истории
-
-GET /api/v1/export
-
-Экспорт истории запросов в CSV.
-
-Пример:
-
-curl -X GET "http://127.0.0.1:8000/api/v1/export?city=Moscow&date_from=2025-11-13&date_to=2025-11-20" \
-     -o weather_history.csv
-     
-4️⃣ Health Check
-
-GET /api/v1/health
 
 Проверка работоспособности сервиса.
 
